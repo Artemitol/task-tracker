@@ -16,4 +16,4 @@ export const tasksApi = baseApi.injectEndpoints({
     overrideExisting: true,
 })
 
-export const { getTaskById, getTasks } = tasksApi.endpoints
+export const { useGetTaskByIdQuery, useGetTasksQuery } = tasksApi
