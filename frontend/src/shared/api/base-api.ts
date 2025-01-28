@@ -5,4 +5,5 @@ export const baseApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
     endpoints: () => ({}),
     refetchOnReconnect: true,
+    tagTypes: ["tasks list", "task"],
 })
