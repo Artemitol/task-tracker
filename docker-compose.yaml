@@ -1,19 +1,34 @@
 services:
-  frontend:
-    build: 
-      context: ./frontend
-    ports:
-      - 8080:5173
-    depends_on:
-      - backend
-    volumes:
-      - ./frontend:/app
-    command: sh -c "npm i && npm run host"
+    frontend:
+        build:
+            context: ./frontend
+        ports:
+            - 8080:5173
+        depends_on:
+            - backend
+        volumes:
+            - ./frontend:/app
+        command: sh -c "npm i && npm run host"
 
-  backend: 
-    build: 
-      context: ./backend
-    ports:
-      - 3000:3000
-    volumes:
-      - ./backend:/backend
+    backend:
+        build:
+            context: ./backend
+        volumes:
+            - ./backend:/backend
+        depends_on:
+            - db
+        ports:
+            - 3000:3000
+        command: sh -c "npm i && npm run dev"
+
+    db:
+        image: postgres
+        container_name: postgres_db
+        environment:
+            POSTGRES_DB: tasks-database
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: admin
+        ports:
+            - "5432:5432"
+        # volumes:
+        #     - ./postgres_data:/var/lib/postgresql/data

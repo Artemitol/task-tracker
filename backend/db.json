@@ -89,7 +89,7 @@
             "executor": {
                 "executorId": 1,
                 "name": "John Doe",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [1, 2]
         },
@@ -100,7 +100,7 @@
             "executor": {
                 "executorId": 2,
                 "name": "Jane Smith",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [3]
         },
@@ -111,7 +111,7 @@
             "executor": {
                 "executorId": 3,
                 "name": "Robert Brown",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [4, 5]
         },
@@ -122,7 +122,7 @@
             "executor": {
                 "executorId": 4,
                 "name": "Emily Davis",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [6]
         },
@@ -133,7 +133,7 @@
             "executor": {
                 "executorId": 5,
                 "name": "Michael Johnson",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [7]
         },
@@ -144,7 +144,7 @@
             "executor": {
                 "executorId": 6,
                 "name": "Jessica Wilson",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [8, 9]
         },
@@ -155,7 +155,7 @@
             "executor": {
                 "executorId": 7,
                 "name": "Chris Taylor",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [10]
         },
@@ -166,7 +166,7 @@
             "executor": {
                 "executorId": 8,
                 "name": "Sarah Lee",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [11]
         },
@@ -177,7 +177,7 @@
             "executor": {
                 "executorId": 9,
                 "name": "Daniel White",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [12, 13]
         },
@@ -188,7 +188,7 @@
             "executor": {
                 "executorId": 10,
                 "name": "Olivia Martinez",
-                "badgeUrl": "data:image/png;base64,iVBOR..."
+                "badgeUrl": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/1h8KAAAAABJRU5ErkJggg=="
             },
             "featuresIds": [14]
         }
@@ -266,8 +266,7 @@
         },
         {
             "id": 15,
-            "name": "Dark mode",
-            "description": "Add a dark mode toggle for user preference."
+            "name": "Dark mode"
         }
     ]
 }

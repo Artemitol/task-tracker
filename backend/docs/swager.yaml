@@ -1,0 +1,415 @@
+openapi: 3.0.0
+info:
+    title: Task Management API
+    version: 1.0.0
+    description: API for managing tasks
+servers:
+    - url: http://localhost:3000/api
+tags:
+    - name: Executors
+      description: Operations related to executors
+    - name: Tasks
+      description: Operations related to tasks
+    - name: Properties
+      description: Operations related to properties
+    - name: PropertiesList
+      description: Operations related to properties list
+    - name: PropertiesValues
+      description: Operations related to properties values
+
+paths:
+    /executors:
+        get:
+            tags:
+                - Executors
+            summary: Get all executors
+            responses:
+                "200":
+                    description: A list of executors
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Executor"
+        post:
+            tags:
+                - Executors
+            summary: Create a new executor
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Executor"
+            responses:
+                "201":
+                    description: Executor created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Executor"
+
+    /executors/{executorId}:
+        get:
+            tags:
+                - Executors
+            summary: Get a specific executor
+            parameters:
+                - in: path
+                  name: executorId
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "200":
+                    description: Executor details
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Executor"
+        put:
+            tags:
+                - Executors
+            summary: Update an executor
+            parameters:
+                - in: path
+                  name: executorId
+                  required: true
+                  schema:
+                      type: integer
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Executor"
+            responses:
+                "200":
+                    description: Executor updated
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Executor"
+        delete:
+            tags:
+                - Executors
+            summary: Delete an executor
+            parameters:
+                - in: path
+                  name: executorId
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "204":
+                    description: Executor deleted
+
+    /tasks:
+        get:
+            tags:
+                - Tasks
+            summary: Get all tasks
+            responses:
+                "200":
+                    description: A list of tasks
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Task"
+        post:
+            tags:
+                - Tasks
+            summary: Create a new task
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Task"
+            responses:
+                "201":
+                    description: Task created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Task"
+
+    /tasks/{taskId}:
+        get:
+            tags:
+                - Tasks
+            summary: Get a specific task
+            parameters:
+                - in: path
+                  name: taskId
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "200":
+                    description: Task details
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Task"
+        put:
+            tags:
+                - Tasks
+            summary: Update a task
+            parameters:
+                - in: path
+                  name: taskId
+                  required: true
+                  schema:
+                      type: integer
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Task"
+            responses:
+                "200":
+                    description: Task updated
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Task"
+        delete:
+            tags:
+                - Tasks
+            summary: Delete a task
+            parameters:
+                - in: path
+                  name: taskId
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "204":
+                    description: Task deleted
+
+    /properties:
+        get:
+            tags:
+                - Properties
+            summary: Get all properties
+            responses:
+                "200":
+                    description: A list of properties
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Property"
+        post:
+            tags:
+                - Properties
+            summary: Create a new property
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Property"
+            responses:
+                "201":
+                    description: Property created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Property"
+
+    /properties/{propertyId}:
+        get:
+            tags:
+                - Properties
+            summary: Get a specific property
+            parameters:
+                - in: path
+                  name: propertyId
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "200":
+                    description: Property details
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Property"
+        put:
+            tags:
+                - Properties
+            summary: Update a property
+            parameters:
+                - in: path
+                  name: propertyId
+                  required: true
+                  schema:
+                      type: integer
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Property"
+            responses:
+                "200":
+                    description: Property updated
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Property"
+        delete:
+            tags:
+                - Properties
+            summary: Delete a property
+            parameters:
+                - in: path
+                  name: propertyId
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "204":
+                    description: Property deleted
+
+    /propertieslist:
+        get:
+            tags:
+                - PropertiesList
+            summary: Get all properties list
+            responses:
+                "200":
+                    description: A list of properties
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/PropertiesList"
+        post:
+            tags:
+                - PropertiesList
+            summary: Create a new property list
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/PropertiesList"
+            responses:
+                "201":
+                    description: Property list created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/PropertiesList"
+
+    /propertiesvalues:
+        get:
+            tags:
+                - PropertiesValues
+            summary: Get all properties values
+            responses:
+                "200":
+                    description: A list of properties values
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/PropertyValue"
+        post:
+            tags:
+                - PropertiesValues
+            summary: Create a new property value
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/PropertyValue"
+            responses:
+                "201":
+                    description: Property value created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/PropertyValue"
+
+components:
+    schemas:
+        Executor:
+            type: object
+            properties:
+                Name:
+                    type: string
+                Email:
+                    type: string
+                Role:
+                    type: string
+                badgeUrl:
+                    type: string
+                IsActive:
+                    type: boolean
+            required:
+                - Name
+                - Email
+                - Role
+
+        Task:
+            type: object
+            properties:
+                name:
+                    type: string
+                status:
+                    type: string
+                ExecutorId:
+                    type: integer
+            required:
+                - name
+                - status
+                - ExecutorId
+
+        Property:
+            type: object
+            properties:
+                PropertyId:
+                    type: integer
+                TaskId:
+                    type: integer
+                ValueId:
+                    type: integer
+            required:
+                - TaskId
+
+        PropertiesList:
+            type: object
+            properties:
+                PropertyId:
+                    type: integer
+                name:
+                    type: string
+                description:
+                    type: string
+            required:
+                - name
+
+        PropertyValue:
+            type: object
+            properties:
+                ValueId:
+                    type: integer
+                PropertyId:
+                    type: integer
+                Value:
+                    type: string
+            required:
+                - PropertyId
+                - Value

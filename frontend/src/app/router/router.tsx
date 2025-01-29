@@ -1,3 +1,4 @@
+import { Dashboard } from "@pages/dashboard"
 import { Layout } from "../layout"
 import { Homepage } from "@pages/home-page"
 import { createBrowserRouter } from "react-router-dom"
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Homepage />,
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard />,
             },
         ],
     },

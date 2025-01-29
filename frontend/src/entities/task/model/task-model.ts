@@ -12,7 +12,7 @@ export const TaskDTOschema = z.object({
     executor: z.object({
         executorId: z.number(),
         name: z.string(),
-        badgeUrl: z.string().base64url(),
+        badgeUrl: z.string().base64(),
     }),
     featuresIds: z.array(z.number().positive().min(1)),
 })
