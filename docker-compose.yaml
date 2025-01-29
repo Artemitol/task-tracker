@@ -1,5 +1,6 @@
 services:
     frontend:
+        container_name: react_frontend
         build:
             context: ./frontend
         ports:
@@ -11,6 +12,7 @@ services:
         command: sh -c "npm i && npm run host"
 
     backend:
+        container_name: node_backend
         build:
             context: ./backend
         volumes:
@@ -27,8 +29,8 @@ services:
         environment:
             POSTGRES_DB: tasks-database
             POSTGRES_USER: admin
-            POSTGRES_PASSWORD: admin
+            POSTGRES_PASSWORD: 1234
         ports:
             - "5432:5432"
-        # volumes:
-        #     - ./postgres_data:/var/lib/postgresql/data
+        volumes:
+            - ./postgres_data:/var/lib/postgresql/data

@@ -4,7 +4,7 @@ info:
     version: 1.0.0
     description: API for managing tasks
 servers:
-    - url: http://localhost:3000/api
+    - url: http://localhost:3000
 tags:
     - name: Executors
       description: Operations related to executors
@@ -348,13 +348,18 @@ components:
         Executor:
             type: object
             properties:
+                ExecutorId:
+                    type: integer
                 Name:
                     type: string
                 Email:
                     type: string
                 Role:
                     type: string
-                badgeUrl:
+                CreatedAt:
+                    type: string
+                    format: date-time
+                BadgeUrl:
                     type: string
                 IsActive:
                     type: boolean
@@ -366,9 +371,11 @@ components:
         Task:
             type: object
             properties:
-                name:
+                TaskId:
+                    type: integer
+                Name:
                     type: string
-                status:
+                Status:
                     type: string
                 ExecutorId:
                     type: integer
@@ -394,9 +401,9 @@ components:
             properties:
                 PropertyId:
                     type: integer
-                name:
+                Name:
                     type: string
-                description:
+                Description:
                     type: string
             required:
                 - name

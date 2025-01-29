@@ -1,26 +1,36 @@
-import express from 'express'
-import swaggerUi from 'swagger-ui-express'
-import YAML from 'yamljs'
+import express from "express"
+import swaggerUi from "swagger-ui-express"
+import YAML from "yamljs"
 import { PostgresDialect } from "@sequelize/postgres"
-import { Sequelize } from "@sequelize/core"
-import { router } from './routes.js'
+import { importModels, Sequelize } from "@sequelize/core"
+import { executorsRouter } from "./routes/executors.js"
+import { z } from "zod"
+import { config } from "dotenv"
+import morgan from "morgan"
+import { tasksRouter } from "./routes/tasks.js"
 
+config()
 const app = express()
+app.use(morgan("combined"))
 
-const swaggerDocument = YAML.load('./docs/swager.yaml')
+const port = z.number().parse(Number(process.env.PORT))
+const swaggerDocument = YAML.load("./docs/swager.yaml")
 const sequelize = new Sequelize({
     dialect: PostgresDialect,
     database: "tasks-database",
     user: "admin",
-    password: "admin",
-    host: "localhost",
+    password: "1234",
+    host: "db",
     port: 5432,
+    models: await importModels("./**/*.model.js"),
 })
 
+await sequelize.sync({ force: true })
 app.use(express.json())
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-app.use(router)
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use(executorsRouter)
+app.use(tasksRouter)
 
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000/api-docs')
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
 })
